@@ -114,13 +114,32 @@ var currentWeatherSection = function (cityName) {
     });
 };
 
+//UV index bg color and warning message
+function getUvIndexWarning(uvi) {
+  if (uvi <= 2) {
+      return { background: "green", message: "ဤအဆင့် နေရောင်ခြည် UV သည် အန္တရာယ်အနည်းငယ်မျှရှိသောအဆင့်ဖြစ်သည်။ နေထွက်အားပြင်းသောအချိန် (မနက် ၁၀ နာရီမှ ၄ နာရီအထိ)တွင် နေရောင်အောက်တွင် တစ်နာရီလောက်သာ နေသင့်သည်။ သို့သော် အရေပြား အလွန်နုညံ့သောသူများနှင့် ကလေးငယ်များကို နေရောင်ထဲ၌ တာရှည်စွာနေခြင်းမှ ကာကွယ်ပေးရပါမည်။" };
+  } else if (uvi <= 5) {
+      return { background: "yellow", message: "ဤအဆင့် နေရောင်ခြည် UV သည်  နေရောင်ခြည်အောက်တွင် ကာကွယ်မှုမရှိဘဲနေလျှင် စတုတ္ထအန္တရာယ်ရှိသောအဆင့်ဖြစ်သည်။ သာမန်လူများသော်မှ ၂၀ မိနစ်အတွင်း အရေပြားလောင်ကျွမ်းသွားနိုင်ပါသည်။ ဦးထုပ်ဆောင်းခြင်းနှင့် နေကာမျက်မှန်ဝတ်ဆင်ခြင်းဖြင့် မျက်စိများကို ကာကွယ်နိုင်ပါသည်။ SPF ၃၀ အနည်းဆုံးပါဝင်သော နေရောင်ကာခရင်မ်(sunscreen)ကို သုံးစွဲရပါမည်။ အပြင်သို့ထွက်သည့်အခါ လက်ရှည်အင်္ကျီများ ဝတ်ဆင်ရန် လိုအပ်ပါသည်။" };
+  } else if (uvi <= 7) {
+      return { background: "orange", message: "ဤအဆင့် နေရောင်ခြည် UV သည်  နေရောင်ခြည်အောက်တွင် ကာကွယ်မှုမရှိဘဲနေလျှင် တတိယအန္တရာယ်ရှိသောအဆင့်ဖြစ်သည်။ သာမန်လူများသော်မှ ၂၀ မိနစ်အတွင်း အရေပြားလောင်ကျွမ်းသွားနိုင်ပါသည်။ ဦးထုပ်ဆောင်းခြင်းနှင့် နေကာမျက်မှန်ဝတ်ဆင်ခြင်းဖြင့် မျက်စိများကို ကာကွယ်နိုင်ပါသည်။ SPF ၃၀ အနည်းဆုံးပါဝင်သော နေရောင်ကာခရင်မ်(sunscreen)ကို သုံးစွဲရပါမည်။ အပြင်သို့ထွက်သည့်အခါ လက်ရှည်အင်္ကျီများ ဝတ်ဆင်ရန်လိုအပ်ပါသည်။ နှာခေါင်းနှင့် နားရွက်များကို ဂရုစိုက်ကာကွယ်ရမည်ကိုလည်းမမေ့ပါနှင့်။ နေရောင်ကာခရင်မ်သည် နေရောင်ကြောင့်မီးလောင်ခြင်းနှင့် နေရောင်၏သက်ရောက်မှုများမှ ကာကွယ်ပေးပါသည်။ နေရောင်ကာပါဝင်သော နှုတ်ခမ်းဆိုးဆေးတစ်ခုခုကို အသုံးပြုပါ။" };
+  } else if (uvi <= 10) {
+      return { background: "red", message: "ဤအဆင့် နေရောင်ခြည် UV သည် နေရောင်ခြည်အောက်တွင် ကာကွယ်မှုမရှိဘဲနေလျှင် ဒုတိယအန္တရာယ်ရှိသောအဆင့်ဖြစ်သည်။ သာမန်လူများသော်မှ ၁၀ မိနစ်အတွင်း အရေပြားလောင်ကျွမ်းသွားနိုင်ပါသည်။ နေထွက်အားပြင်းသောအချိန် (မနက် ၁၀ နာရီမှ ၄ နာရီအထိ) တွင် နေရောင်အောက်တိုက်ရိုက်နေခြင်းမှ ရှောင်ရှားပါ။ သင့်ကိုယ်ကိုယ်ကာကွယ်ရန် SPF ၃၀ အနည်းဆုံးပါဝင်သော နေရောင်ကာခရင်မ်ကို ခပ်ထူထူလိမ်းထားပါ။ မျက်စိများကိုကာကွယ်ရန် ကာကွယ်ရေးအဝတ်အစားများနှင့် နေကာမျက်မှန်များဝတ်ပါ။ အပြင်ထွက်သည့်အခါ အရိပ်ရှိရာနေရာကို ရှာဖွေပါ။ ရေ၊ သဲ၊ ကွန်ကရစ်လမ်းနှင့် မှန်များသည် UV ရောင်ခြည်များကို ရောင်ပြန်သက်ရောက်စေသည့်အတွက် ထိုအရာများမှရှောင်ရှားပါ။ လက်ရှည်အင်္ကျီနှင့် ဘောင်းဘီများဝတ်ပါ။ UV ရောင်ခြည်များသည် အပေါက်များနှင့် နေရာလွတ်များမှတဆင့် ဝင်ရောက်နိုင်သည်ကို သတိပြုပါ။" };
+  } else {
+      return { background: "violet", message: "ဤအဆင့် နေရောင်ခြည် UV သည်  နေရောင်ခြည်အောက်တွင် ကာကွယ်မှုမရှိဘဲနေလျှင် ပထမအန္တရာယ်ရှိသောအဆင့်ဖြစ်သည်။ သာမန်လူများသော်မှ ၅ မိနစ်အတွင်း အရေပြားလောင်ကျွမ်းသွားနိုင်ပါသည်။ အပြင်တွင်အလုပ်လုပ်သောသူများနှင့် အပျော်ခရီထွက်သူများအတွက် အထူးစိုးရိမ်ရပါသည်။ နေထွက်အားပြင်းသောအချိန် (မနက် ၁၀ နာရီမှ ၄ နာရီအထိ) တွင် နေရောင်အောက်တိုက်ရိုက်နေခြင်းမှ ရှောင်ရှားပါ။ SPF 30+ အနည်းဆုံးပါဝင်သော နေရောင်ကာခရင်မ်ကို ၂ နာရီခြားတစ်ခါ လိမ်းပေးပါ။ အကယ်၍ ချွေးထွက်လျှင် သို့မဟုတ် ရေကူးနေပါက ခဏခဏလိမ်းပေးပါ။ နေရောင်နှင့်တိုက်ရိုက်ထိတွေ့ခြင်းမှ ရှောင်ရှားပါ။ UVA နှင့် UVB ရောင်ခြည်ကို ၉၉-၁၀၀% တားဆီးနိုင်သော နေကာမျက်မှန်ကိုဝတ်ဆင်ပါ။ UV ရောင်ခြည် ၅၀% သည် မျက်စိကိုတိုက်ရိုက်ထိခိုင်စေနိုင်ပါသည်။ ဦးထုပ်ခပ်ပြန့်ပြန့်ကို ဆောင်းထားခြင်းဖြင့် ကာကွယ်ပါ။" };
+  }
+}
+//ends
+
 var fiveDayForecastSection = function (cityName) {
+  // get and use data from open weather current weather api end point
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`
   )
+  // get response and turn it into objects
     .then(function (response) {
       return response.json();
     })
+    // get city's longitude and latitude
     .then(function (response) {
       var cityLon = response.coord.lon;
       var cityLat = response.coord.lat;
@@ -128,23 +147,29 @@ var fiveDayForecastSection = function (cityName) {
       fetch(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${cityLat}&lon=${cityLon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`
       )
+      // get response from one call api and turn it into objects
         .then(function (response) {
           return response.json();
         })
         .then(function (response) {
           console.log(response);
 
+          // add 5 day forecast title
           var futureForecastTitle = $("#future-forecast-title");
           futureForecastTitle.text("5-Day Forecast:");
 
+          // using data from response, set up each day of 5 day forecast
           for (var i = 1; i <= 5; i++) {
+            // add class to future cards to create card containers
             var futureCard = $(".future-card");
             futureCard.addClass("future-card-details");
 
+            // add date to 5 day forecast
             var futureDate = $("#future-date-" + i);
             var date = moment().add(i, "d").format("M/D/YYYY");
             futureDate.text(date);
 
+            // add icon to 5 day forecast
             var futureIcon = $("#future-icon-" + i);
             futureIcon.addClass("future-icon");
             var futureIconCode = response.daily[i].weather[0].icon;
@@ -153,19 +178,28 @@ var fiveDayForecastSection = function (cityName) {
               `https://openweathermap.org/img/wn/${futureIconCode}@2x.png`
             );
 
+            // add temp to 5 day forecast
             var futureTemp = $("#future-temp-" + i);
             futureTemp.text("Temp: " + response.daily[i].temp.day + " \u00B0F");
 
+            // add humidity to 5 day forecast
             var futureHumidity = $("#future-humidity-" + i);
             futureHumidity.text(
               "Humidity: " + response.daily[i].humidity + "%"
             );
 
+            // add wind speed to 5 day forecast
             var futureWind = $("#future-wind-" + i);
             futureWind.text("Wind: " + response.daily[i].wind_speed + " MPH");
 
+            // add UV index and warning to 5 day forecast
             var futureUv = $("#future-uv-" + i);
-            futureUv.text("UV Index: " + response.daily[i].uvi);
+            // futureUv.text("UV Index: " + response.daily[i].uvi);
+            var uvIndex = response.daily[i].uvi;
+            var uvInfo = getUvIndexWarning(uvIndex);
+            futureUv.text("UV Index: " + uvIndex);
+            futureUv.css("background-color", uvInfo.background);
+            futureUv.attr("title", uvInfo.message); // Adding a tooltip with the warning message
           }
         });
     });

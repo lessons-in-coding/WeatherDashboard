@@ -141,10 +141,21 @@
 .future-uv {
   font-size: 20px;
   font-weight: 400;
-  color: rgb(156, 134, 46);
-  padding-left: 27%;
+  color: rgb(56, 52, 33);
+  /* padding-left: 5%; */
 }
 
-.future-card {
+/* .future-card {
   background-color: aliceblue;
+} */
+
+.future-card {
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.future-uv {
+  padding: 5px;
+  border-radius: 5px;
 }
