@@ -55,8 +55,8 @@
 }
 
 .current-weather-container {
-  margin: 20px;
-  padding: 30px;
+  margin: 5px;
+  padding: 20px;
   background-color: lightgrey;
 }
 
@@ -113,7 +113,7 @@
 .future-forecast-title {
   font-size: 3.5rem;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   color: rgb(121, 104, 32);
 }
 
