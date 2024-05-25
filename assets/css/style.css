@@ -61,7 +61,7 @@
 }
 
 .current-title-container {
-  display: flex;
+  display: inline-block;
 }
 
 .current-title {
