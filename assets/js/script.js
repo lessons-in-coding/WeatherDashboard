@@ -174,7 +174,7 @@ var fiveDayForecastSection = function (cityName) {
         .then(function (response) {
           console.log(response);
 
-          add 5 day forecast title
+          //add 5 day forecast title
           var futureForecastTitle = $("#future-forecast-title");
           futureForecastTitle.text("5-Day Forecast:");
                     // Append an image after setting the title
