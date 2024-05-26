@@ -175,10 +175,10 @@ var fiveDayForecastSection = function (cityName) {
           console.log(response);
 
           //add 5 day forecast title
-          var futureForecastTitle = $("#future-forecast-title");
-          futureForecastTitle.text("5-Day Forecast:");
+          // var futureForecastTitle = $("#future-forecast-title");
+          // futureForecastTitle.text("5-Day Forecast:");
                     // Append an image after setting the title
-          futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
+          // futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
 
           // using data from response, set up each day of 5 day forecast
           for (var i = 1; i <= 5; i++) {
@@ -268,13 +268,13 @@ var fiveDayForecastSection = function (cityName) {
 //   updateFutureForecastTitle();
 // });
 
-// $(document).ready(function() {
-//   var futureForecastTitle = $("#future-forecast-title");
-//   futureForecastTitle.text("5-Day Forecast:");
+$(document).ready(function() {
+  var futureForecastTitle = $("#future-forecast-title");
+  futureForecastTitle.text("5-Day Forecast:");
 
-//   // Append an image after setting the title
-//   futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
-// });
+  // Append an image after setting the title
+  futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
+});
 
 $("#search-form").on("submit", function (event) {
   event.preventDefault();
