@@ -240,8 +240,33 @@ $(document).ready(function() {
   }
 
   // Call this function whenever you need to update the future forecast title
-  updateFutureForecastTitle();
+  // For example, when a new city is added
+  $("#search-form").on("submit", function(event) {
+    event.preventDefault();
+    var cityName = $("#search-input").val().trim();
+    if (cityName) {
+      // Perform your search and update actions here
+      updateFutureForecastTitle();
+    }
+  });
 });
+
+
+// $(document).ready(function() {
+//   function updateFutureForecastTitle() {
+//     var futureForecastTitle = $("#future-forecast-title");
+//     futureForecastTitle.text("5-Day Forecast:");
+
+//     // Check if the image already exists
+//     if ($("#forecast-title-image").length === 0) {
+//       // Append an image after setting the title if it doesn't already exist
+//       futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
+//     }
+//   }
+
+//   // Call this function whenever you need to update the future forecast title
+//   updateFutureForecastTitle();
+// });
 
 // $(document).ready(function() {
 //   var futureForecastTitle = $("#future-forecast-title");
