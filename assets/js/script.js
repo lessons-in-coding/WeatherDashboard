@@ -174,11 +174,11 @@ var fiveDayForecastSection = function (cityName) {
         .then(function (response) {
           console.log(response);
 
-          // add 5 day forecast title
-          // var futureForecastTitle = $("#future-forecast-title");
-          // futureForecastTitle.text("5-Day Forecast:");
-          //           // Append an image after setting the title
-          // futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
+          add 5 day forecast title
+          var futureForecastTitle = $("#future-forecast-title");
+          futureForecastTitle.text("5-Day Forecast:");
+                    // Append an image after setting the title
+          futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
 
           // using data from response, set up each day of 5 day forecast
           for (var i = 1; i <= 5; i++) {
@@ -227,29 +227,29 @@ var fiveDayForecastSection = function (cityName) {
     });
 };
 
-$(document).ready(function() {
-  function updateFutureForecastTitle() {
-    var futureForecastTitle = $("#future-forecast-title");
-    futureForecastTitle.text("5-Day Forecast:");
+// $(document).ready(function() {
+//   function updateFutureForecastTitle() {
+//     var futureForecastTitle = $("#future-forecast-title");
+//     futureForecastTitle.text("5-Day Forecast:");
 
-    // Check if the image already exists
-    if ($("#forecast-title-image").length === 0) {
-      // Append an image after setting the title if it doesn't already exist
-      futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
-    }
-  }
+//     // Check if the image already exists
+//     if ($("#forecast-title-image").length === 0) {
+//       // Append an image after setting the title if it doesn't already exist
+//       futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
+//     }
+//   }
 
-  // Call this function whenever you need to update the future forecast title
-  // For example, when a new city is added
-  $("#search-form").on("submit", function(event) {
-    event.preventDefault();
-    var cityName = $("#search-input").val().trim();
-    if (cityName) {
-      // Perform your search and update actions here
-      updateFutureForecastTitle();
-    }
-  });
-});
+//   // Call this function whenever you need to update the future forecast title
+//   // For example, when a new city is added
+//   $("#search-form").on("submit", function(event) {
+//     event.preventDefault();
+//     var cityName = $("#search-input").val().trim();
+//     if (cityName) {
+//       // Perform your search and update actions here
+//       updateFutureForecastTitle();
+//     }
+//   });
+// });
 
 
 // $(document).ready(function() {
