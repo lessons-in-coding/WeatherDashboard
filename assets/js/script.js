@@ -227,17 +227,15 @@ var fiveDayForecastSection = function (cityName) {
     });
 };
 
-$(document).ready(function () {
+$(document).ready(function() {
   function updateFutureForecastTitle() {
     var futureForecastTitle = $("#future-forecast-title");
+    futureForecastTitle.text("5-Day Forecast:");
 
     // Check if the image already exists
-    if ($("5-Day Forecast:" === 0 && "#forecast-title-image").length === 0) {
-      futureForecastTitle.text("5-Day Forecast:");
+    if ($("#forecast-title-image").length === 0) {
       // Append an image after setting the title if it doesn't already exist
-      futureForecastTitle.after(
-        '<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">'
-      );
+      futureForecastTitle.after('<img id="forecast-title-image" src="./assets/images/uv-index-scale.gif" alt="uv-index-scale-image" class="forecast-title-image">');
     }
   }
 
