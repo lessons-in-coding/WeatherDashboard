@@ -1,161 +1,342 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-.h1-container {
-  padding: 4px;
-}
+  body {
+    background-color: rgba(215, 215, 215, 0.997);
+  }
+  
+  .h1-container {
+    padding: 4px;
+    text-align: center;
+  }
+  
+  .form-container {
+    padding: 10px;
+  }
+  
+  .search-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: rgb(39, 124, 127);
+    padding-bottom: 5px;
+  }
+  
+  .search-input {
+    width: 100%;
+    height: 47px;
+    border-color: lightgrey;
+    border-width: thin;
+    padding: 0 15px;
+    font-size: 1.25rem;
+    color: rgb(44, 129, 132);
+  }
+  
+  .search-button {
+    padding: 13px 22px;
+  }
+  
+  .search-history-container {
+    padding: 10px;
+  }
+  
+  .past-search {
+    margin: 0;
+    text-align: left;
+    width: auto;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    color: rgb(139, 53, 53);
+    font-size: 1.25rem;
+  }
+  
+  #clear-history-button {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 10px;
+  }
+  
+  .current-weather-container {
+    margin: 5px;
+    padding: 20px;
+    border: 5px solid rgb(155, 142, 21);
+    margin: 20px;
+    /* background-color: lightgrey; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+  }
+  
+  .current-title-container {
+    /* display: flex; */
+    /* align-items: center; */
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    /* text-align: center; */
+  }
+  
+  .current-title {
+    font-size: 2rem;
+    margin: 15px 20px;
+  }
+  
+  .current-weather-icon {
+    width: 80px;
+    height: auto;
+  }
+  
+  .current-temperature,
+  .current-humidity,
+  .current-wind-speed {
+    margin: 20px;
+    font-size: 1.25rem;
+    text-align: center;
+  }
 
-.form-container {
-  padding: 10px;
-}
+  .uv {
+    text-align: center;
+  }
+  
+  .current-uv-index {
+    font-size: 1.25rem;
+    display: inline-flex;
+    margin: 0 0 0 20px;
+  }
+  
+  .current-number {
+    font-size: 1.25rem;
+    display: inline-flex;
+    color: white;
+    padding: 5px 10px;
+  }
+  
+  .favorable {
+    background-color: green;
+  }
+  
+  .moderate {
+    background-color: yellow;
+  }
+  
+  .severe {
+    background-color: red;
+  }
 
-.search-label {
-  font-size: 20px;
-  font-weight: 600;
-  color: rgb(39, 124, 127);
-  padding-bottom: 5px;
-}
+  .forecasts-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .future-forecast-container {
+    margin: 20px 10px;
+    background-color: rgba(208, 207, 207, 0.989);
+    color: whitesmoke;
+  }
+  
+  .future-forecast-title {
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px;
+    color: rgb(121, 104, 32);
+  }
 
-.search-input {
-  width: 100%;
-  height: 47px;
-  border-color: lightgrey;
-  border-width: thin;
-  padding: 0 15px;
-  font-size: 2rem;
-  color: rgb(44, 129, 132);
-}
-
-.search-button {
-  padding: 13px 22px;
-}
-
-.search-history-container {
-  padding: 10px;
-}
-
-.past-search {
-  margin: 0;
-  text-align: left;
-  width: auto;
-  height: 45px;
-  line-height: 45px;
-  padding: 0 15px;
-  color: rgb(139, 53, 53);
-  font-size: 2rem;
-}
-
-#clear-history-button {
-  width: 100%;
-  font-size: 2rem;
-  padding: 10px;
-}
-
-.current-weather-container {
-  margin: 5px;
-  padding: 20px;
-  background-color: lightgrey;
-}
-
-.current-title-container {
-  display: inline-block;
-}
-
-.current-title {
-  font-size: 40px;
-  margin: 15px 0 20px 20px;
-}
-
-.current-weather-icon {
-  width: 150px;
-  height: auto;
-}
-
-.current-temperature,
-.current-humidity,
-.current-wind-speed {
-  margin: 15px 20px;
-  font-size: 20px;
-}
-
-.current-uv-index {
-  font-size: 20px;
-  display: inline;
-  margin: 0 0 0 20px;
-}
-
-.current-number {
-  font-size: 20px;
-  display: inline;
-  color: white;
-  padding: 5px 10px;
-}
-
-.favorable {
-  background-color: green;
-}
-
-.moderate {
-  background-color: yellow;
-}
-
-.severe {
-  background-color: red;
-}
-
-.future-forecast-container {
-  margin: 20px 10px;
-}
-
-.future-forecast-title {
-  font-size: 3.5rem;
-  text-align: center;
-  padding: 10px;
-  color: rgb(121, 104, 32);
-}
-
-.future-card-details {
-  width: 19%;
-  padding: 10px;
-}
-
-.future-date {
-  font-size: 23px;
-  font-weight: 500;
-  color: rgb(121, 104, 32);
-  text-align: center;
-}
-
-.future-icon {
-  width: 150px;
-  height: auto;
-  margin: 0 22%;
-}
-
-.future-temp,
-.future-humidity,
-.future-wind,
-.future-uv {
-  font-size: 20px;
-  font-weight: 400;
-  color: rgb(56, 52, 33);
-  /* padding-left: 5%; */
-}
-
-/* .future-card {
-  background-color: aliceblue;
-} */
-
-.future-card {
-  padding: 10px;
-  color: white;
-  text-align: center;
-}
-
-.future-uv {
-  padding: 5px;
-  border-radius: 5px;
-}
+  .forecast-title-image {
+    display: block;
+    margin: 10px auto; /* Center the image horizontally and add some margin */
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;
+  }
+  
+  
+  .future-card-details {
+    width: 19%;
+    padding: 10px;
+  }
+  
+  .future-date {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgb(121, 104, 32);
+    text-align: center;
+  }
+  
+  .future-icon {
+    width: 80px;
+    height: auto;
+    margin: 10px 0;
+  }
+  
+  .future-temp,
+  .future-humidity,
+  .future-wind,
+  .future-uv {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: rgb(56, 52, 33);
+  }
+  
+  .future-card {
+    padding: 10px;
+    color: white;
+    text-align: center;
+    border: 3px solid rgba(153, 151, 151, 0.989);
+    box-shadow: 4px 4px 10px #888888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .future-uv {
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+    .current-title {
+      font-size: 2.5rem;
+    }
+  
+    .future-forecast-title {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .current-title {
+      font-size: 3rem;
+    }
+  
+    .future-forecast-title {
+      font-size: 3rem;
+    }
+  
+    .future-card {
+      padding: 15px;
+    }
+  
+    .future-icon {
+      width: 100px;
+    }
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .current-title {
+      font-size: 3.5rem;
+    }
+  
+    .future-forecast-title {
+      font-size: 3.5rem;
+    }
+  
+    .future-icon {
+      width: 120px;
+    }
+  }
+  
+  /* Extra large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .current-title {
+      font-size: 4rem;
+    }
+  
+    .future-forecast-title {
+      font-size: 4rem;
+    }
+  
+    .future-icon {
+      width: 150px;
+    }
+  }
+  
+  /* Additional Media Queries for Small Devices (Mobile Phones) */
+  @media (max-width: 575.98px) {
+    .h1-container {
+      padding: 4px;
+      text-align: center;
+    }
+  
+    .search-label {
+      font-size: 1rem;
+    }
+  
+    .search-input {
+      font-size: 1rem;
+      height: 40px;
+    }
+  
+    .search-button {
+      padding: 8px 12px;
+    }
+  
+    .past-search {
+      font-size: 1rem;
+      height: 35px;
+      line-height: 35px;
+    }
+  
+    #clear-history-button {
+      font-size: 1rem;
+      padding: 8px;
+    }
+  
+    .current-title {
+      font-size: 1.5rem;
+      margin: 10px 10px;
+    }
+  
+    .current-weather-icon {
+      width: 60px;
+    }
+  
+    .current-temperature,
+    .current-humidity,
+    .current-wind-speed {
+      font-size: 1rem;
+      margin: 10px 10px;
+    }
+  
+    .current-uv-index,
+    .current-number {
+      font-size: 1rem;
+    }
+  
+    .future-forecast-title {
+      font-size: 1.5rem;
+    }
+  
+    .future-card-details {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .future-date {
+      font-size: 1rem;
+    }
+  
+    .future-icon {
+      width: 60px;
+    }
+  
+    .future-temp,
+    .future-humidity,
+    .future-wind,
+    .future-uv {
+      font-size: 1rem;
+    }
+  
+    .future-card {
+        width: 100%;
+      /* padding: 10px; */
+      margin-bottom: 10px;
+    }
+  }
+  

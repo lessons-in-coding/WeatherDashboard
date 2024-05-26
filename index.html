@@ -34,7 +34,7 @@
       <div class="container-fluid">
         <div class="row page-content">
           <!-- column 1 -->
-          <div class="col-sm-2 bg-light p-0">
+          <div class="col-sm-12 col-md-2 bg-light p-0">
             <!-- search form -->
             <div class="form-container mx-3">
               <form id="search-form">
@@ -46,7 +46,7 @@
                 </div>
                 <!-- search label input and button-->
                 <div class="row m-0">
-                  <div class="col-sm-10 p-0 my-auto">
+                  <div class="col-10 p-0 my-auto">
                     <input
                       type="text"
                       id="search-input"
@@ -54,7 +54,7 @@
                       class="search-input rounded"
                     />
                   </div>
-                  <div class="col-sm-2 p-0">
+                  <div class="col-2 p-0">
                     <button
                       type="submit"
                       class="btn bg-primary rounded search-button"
@@ -69,7 +69,9 @@
             <div
               id="search-history-container"
               class="row m-0 search-history-container"
-            ><ul id="search-history-list" class="list-group w-100"></ul></div>
+            >
+              <ul id="search-history-list" class="list-group w-100"></ul>
+            </div>
             <!-- clear search history button -->
             <div class="clear-history-button row m-0">
               <button
@@ -82,13 +84,13 @@
           </div>
 
           <!-- column 2 -->
-          <div class="col-sm-10 p-0">
+          <div class="col-sm-12 col-md-10 p-0">
             <!-- current weather conditions -->
-            <div id="current-weather-container" class="row d-block">
+            <div id="current-weather-container" class="row d-block p-3">
               <!-- current weather title -->
-              <div class="current-title-container">
-                <h2 id="current-title" class="current-title d-inline"></h2>
-                <img id="current-weather-icon" class="d-inline" src="" alt="" />
+              <div class="current-title-container d-flex align-items-center">
+                <h2 id="current-title" class="current-title d-inline m-0"></h2>
+                <img id="current-weather-icon" class="d-inline ml-2" src="" alt="" />
               </div>
               <!-- current weather temperature -->
               <p class="current-temperature" id="current-temperature"></p>
@@ -97,59 +99,61 @@
               <!-- current weather wind speed -->
               <p class="current-wind-speed" id="current-wind-speed"></p>
               <!-- current weather uv index -->
+              <div class="uv">
               <p class="current-uv-index" id="current-uv-index"></p>
               <p class="current-number rounded" id="current-number"></p>
             </div>
+            </div>
             <!-- 5 day forecast -->
-            <div class="row future-forecast-container d-block">
-              <!-- 5 day forecast title-->
-              <h2 class="future-forecast-title" id="future-forecast-title"></h2>
-              <div
-                id="forecasts-cards-container"
-                class="forecasts-cards-container d-flex justify-content-between"
-              >
-                <!-- future day forecard card -->
-                <div class="future-card rounded">
-                  <p class="future-date" id="future-date-1"></p>
-                  <img id="future-icon-1" src="" alt="" />
-                  <p class="future-temp" id="future-temp-1"></p>
-                  <p class="future-humidity" id="future-humidity-1"></p>
-                  <p class="future-wind" id="future-wind-1"></p>
-                  <p class="future-uv" id="future-uv-1"></p>
-                </div>
-                <div class="future-card rounded">
-                  <p class="future-date" id="future-date-2"></p>
-                  <img id="future-icon-2" src="" alt="" />
-                  <p class="future-temp" id="future-temp-2"></p>
-                  <p class="future-humidity" id="future-humidity-2"></p>
-                  <p class="future-wind" id="future-wind-2"></p>
-                  <p class="future-uv" id="future-uv-2"></p>
-                </div>
-                <div class="future-card rounded">
-                  <p class="future-date" id="future-date-3"></p>
-                  <img id="future-icon-3" src="" alt="" />
-                  <p class="future-temp" id="future-temp-3"></p>
-                  <p class="future-humidity" id="future-humidity-3"></p>
-                  <p class="future-wind" id="future-wind-3"></p>
-                  <p class="future-uv" id="future-uv-3"></p>
-                </div>
-                <div class="future-card rounded">
-                  <p class="future-date" id="future-date-4"></p>
-                  <img id="future-icon-4" src="" alt="" />
-                  <p class="future-temp" id="future-temp-4"></p>
-                  <p class="future-humidity" id="future-humidity-4"></p>
-                  <p class="future-wind" id="future-wind-4"></p>
-                  <p class="future-uv" id="future-uv-4"></p>
-                </div>
-                <div class="future-card rounded">
-                  <p class="future-date" id="future-date-5"></p>
-                  <img id="future-icon-5" src="" alt="" />
-                  <p class="future-temp" id="future-temp-5"></p>
-                  <p class="future-humidity" id="future-humidity-5"></p>
-                  <p class="future-wind" id="future-wind-5"></p>
-                  <p class="future-uv" id="future-uv-5"></p>
-                </div>
-              </div>
+            <div class="row future-forecast-container d-block p-3">
+                <!-- 5 day forecast title-->
+                <h2 class="future-forecast-title" id="future-forecast-title"></h2><br>
+                <div
+    id="forecasts-cards-container"
+    class="forecasts-cards-container d-flex justify-content-between flex-wrap">
+    <!-- future day forecast card -->
+    <div class="future-card rounded col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+        <p class="future-date" id="future-date-1"></p>
+        <img id="future-icon-1" src="" alt="" />
+        <p class="future-temp" id="future-temp-1"></p>
+        <p class="future-humidity" id="future-humidity-1"></p>
+        <p class="future-wind" id="future-wind-1"></p>
+        <p class="future-uv" id="future-uv-1"></p>
+    </div>
+    <div class="future-card rounded col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+        <p class="future-date" id="future-date-2"></p>
+        <img id="future-icon-2" src="" alt="" />
+        <p class="future-temp" id="future-temp-2"></p>
+        <p class="future-humidity" id="future-humidity-2"></p>
+        <p class="future-wind" id="future-wind-2"></p>
+        <p class="future-uv" id="future-uv-2"></p>
+    </div>
+    <div class="future-card rounded col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+        <p class="future-date" id="future-date-3"></p>
+        <img id="future-icon-3" src="" alt="" />
+        <p class="future-temp" id="future-temp-3"></p>
+        <p class="future-humidity" id="future-humidity-3"></p>
+        <p class="future-wind" id="future-wind-3"></p>
+        <p class="future-uv" id="future-uv-3"></p>
+    </div>
+    <div class="future-card rounded col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+        <p class="future-date" id="future-date-4"></p>
+        <img id="future-icon-4" src="" alt="" />
+        <p class="future-temp" id="future-temp-4"></p>
+        <p class="future-humidity" id="future-humidity-4"></p>
+        <p class="future-wind" id="future-wind-4"></p>
+        <p class="future-uv" id="future-uv-4"></p>
+    </div>
+    <div class="future-card rounded col-12 col-sm-6 col-md-4 col-lg-2 mb-3">
+        <p class="future-date" id="future-date-5"></p>
+        <img id="future-icon-5" src="" alt="" />
+        <p class="future-temp" id="future-temp-5"></p>
+        <p class="future-humidity" id="future-humidity-5"></p>
+        <p class="future-wind" id="future-wind-5"></p>
+        <p class="future-uv" id="future-uv-5"></p>
+    </div>
+</div>
+
             </div>
           </div>
         </div>
